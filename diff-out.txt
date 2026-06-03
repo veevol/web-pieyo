@@ -1,0 +1,45 @@
+﻿diff --git a/app/page.js b/app/page.js
+index baf7b43..ad246c2 100644
+--- a/app/page.js
++++ b/app/page.js
+@@ -74,36 +74,22 @@ const SIMPOSIUM = [
+ const TICKETS = [
+   {
+     name: "Early Bird",
+-    price: "Rp 250.000",
+-    active: true,
+-    badge: "Hingga 30 Juni 2026",
+-    badgeActive: true,
++    price: "Belum tersedia",
++    active: false,
+     features: ["Semua Simposium", "Seminar Kit", "Konsumsi"],
+-    waText: "Halo Vee, saya ingin daftar PIE YO 2026 Early Bird",
+     featured: false,
+   },
+   {
+     name: "Regular",
+-    price: "Rp 350.000",
+-    strikethrough: true,
++    price: "Rp 750.000",
+     active: false,
+     badge: "Belum Aktif",
+     subtitle: "Buka setelah 30 Juni 2026",
+     featured: true,
+   },
+-  {
+-    name: "Mahasiswa",
+-    price: "Rp 150.000",
+-    active: true,
+-    badge: "Hingga 30 Juni 2026",
+-    badgeActive: true,
+-    features: ["Profesi Apoteker", "Program Magister"],
+-    waText: "Halo Vee, saya ingin daftar PIE YO 2026 Mahasiswa",
+-    featured: false,
+-  },
+ ];
+ 
+-const WA_BASE = "https://wa.me/6285163627358?text=";
++const WA_BASE = "https://wa.me/6281326681212?text=";
+ 
+ export default function Home() {
+   return (

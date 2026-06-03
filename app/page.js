@@ -74,36 +74,24 @@ const SIMPOSIUM = [
 const TICKETS = [
   {
     name: "Early Bird",
-    price: "Rp 250.000",
-    active: true,
-    badge: "Hingga 30 Juni 2026",
-    badgeActive: true,
+    price: "Belum tersedia",
+    active: false,
     features: ["Semua Simposium", "Seminar Kit", "Konsumsi"],
-    waText: "Halo Vee, saya ingin daftar PIE YO 2026 Early Bird",
     featured: false,
   },
   {
     name: "Regular",
-    price: "Rp 350.000",
-    strikethrough: true,
+    price: "Rp 750.000",
     active: false,
     badge: "Belum Aktif",
     subtitle: "Buka setelah 30 Juni 2026",
     featured: true,
   },
-  {
-    name: "Mahasiswa",
-    price: "Rp 150.000",
-    active: true,
-    badge: "Hingga 30 Juni 2026",
-    badgeActive: true,
-    features: ["Profesi Apoteker", "Program Magister"],
-    waText: "Halo Vee, saya ingin daftar PIE YO 2026 Mahasiswa",
-    featured: false,
-  },
 ];
 
-const WA_BASE = "https://wa.me/6285163627358?text=";
+const WA_BASE = "https://wa.me/6281326681212?text=";
+const WA_VEE_TEXT = "Halo Vee, mohon info event PIE YO 2026";
+const WA_CHAT_VEE_LINK = `${WA_BASE}${encodeURIComponent(WA_VEE_TEXT)}`;
 
 export default function Home() {
   return (
@@ -235,7 +223,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-muted">
               Daftar melalui AI Vee via WhatsApp untuk mendapatkan link registrasi resmi.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
               {TICKETS.map((ticket) => (
                 <article
                   key={ticket.name}
@@ -291,24 +279,18 @@ export default function Home() {
                       ))}
                     </ul>
                   )}
-                  <div className="mt-6">
-                    {ticket.active ? (
-                      <a
-                        href={`${WA_BASE}${encodeURIComponent(ticket.waText)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-wa"
-                      >
-                        Chat AI Vee
-                      </a>
-                    ) : (
-                      <button type="button" disabled className="btn-wa cursor-not-allowed opacity-50">
-                        Belum Tersedia
-                      </button>
-                    )}
-                  </div>
                 </article>
               ))}
+            </div>
+            <div className="mt-6 flex justify-center">
+              <a
+                href={WA_CHAT_VEE_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-wa w-full max-w-md sm:w-auto sm:min-w-[280px]"
+              >
+                Chat AI Vee
+              </a>
             </div>
           </div>
         </SectionReveal>
