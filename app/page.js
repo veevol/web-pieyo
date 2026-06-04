@@ -135,7 +135,7 @@ export default function Home() {
             <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:gap-10">
               <div>
                 <p className="text-sm leading-relaxed text-muted sm:text-body-desktop">
-                  PIE YO (Pertemuan Ilmiah &amp; Eksibhisi Yogyakarta) 2026 merupakan forum
+                  PIE YO (Pertemuan Ilmiah &amp; Ekshibisi Yogyakarta) 2026 merupakan forum
                   ilmiah tahunan PD IAI DIY yang menghadirkan sinergi ilmu farmasi, teknologi,
                   dan praktik kefarmasian. Acara ini menjadi wadah bagi apoteker, akademisi,
                   mahasiswa, dan industri untuk berkolaborasi menghadapi era kecerdasan buatan

@@ -8,12 +8,12 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "PIE YO 2026 — Pertemuan Ilmiah & Eksibhisi Yogyakarta",
+  title: "PIE YO 2026 — Pertemuan Ilmiah & Ekshibisi Yogyakarta",
   description:
     "Konferda & Pertemuan Ilmiah PD IAI DIY. Synergy of Pharmaceutical Science, Technology and Practices. 11–13 September 2026, Sahid Raya Hotel Yogyakarta.",
   openGraph: {
     title: "PIE YO 2026",
-    description: "Pertemuan Ilmiah & Eksibhisi Yogyakarta — PD IAI DIY",
+    description: "Pertemuan Ilmiah & Ekshibisi Yogyakarta — PD IAI DIY",
     locale: "id_ID",
   },
 };

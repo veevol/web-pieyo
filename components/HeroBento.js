@@ -12,7 +12,7 @@ export default function HeroBento() {
     <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-4">
       <article className="glass-card glass-card-lg relative z-10 col-span-1 flex flex-col justify-between p-5 sm:p-6 lg:col-span-2 lg:row-span-2 lg:p-8">
         <div>
-          <p className="tag-caps text-muted">Pertemuan Ilmiah &amp; Eksibhisi Yogyakarta</p>
+          <p className="tag-caps text-muted">Pertemuan Ilmiah &amp; Ekshibisi Yogyakarta</p>
           <h1 className="mt-3 font-heading text-h1-mobile font-bold text-navy lg:text-h1-desktop">
             PIE YO <span className="text-red">2026</span>
           </h1>
