@@ -41,33 +41,53 @@ const TUJUAN = [
 const SIMPOSIUM = [
   {
     title: "AI-Powered Clinical Decision Support: Meningkatkan Outcome Pasien di Era Digital",
-    room: "Ballroom 1",
+    label: "Simposium 1",
     tint: "from-gold/10 to-gold/5",
   },
   {
     title: "Personalized Medicine & Farmakogenomik: Dari DNA ke Terapi Individual",
-    room: "Ballroom 2",
+    label: "Simposium 2",
     tint: "from-red/8 to-red-soft/10",
   },
   {
     title: "Telepharmacy & Digital Pharmacy Services: Peluang Bisnis dan Pelayanan",
-    room: "Ballroom 3",
+    label: "Simposium 3",
     tint: "from-navy/8 to-navy/4",
   },
   {
     title: "Penggunaan Obat pada Kehamilan & Laktasi: Safety, Evidence, dan Praktik Klinik",
-    room: "Arjuna 1+2",
+    label: "Simposium 4",
     tint: "from-red-soft/15 to-gold/8",
   },
   {
     title: "Halal Pharmaceutical Industry: Dari Supply Chain ke Global Market",
-    room: "Bima 1+2",
+    label: "Simposium 5",
     tint: "from-gold/12 to-cream-warm/30",
   },
   {
     title: "Future Pharmacist: Leadership, Entrepreneurship & AI di Era Healthcare 5.0",
-    room: "Kresna 1+2",
+    label: "Simposium 6",
     tint: "from-navy/10 to-gold/8",
+  },
+  {
+    title: "Update Tatalaksana Diabetes Mellitus: Dari Obat Konvensional ke Terapi Inovatif",
+    label: "Simposium 7",
+    tint: "from-gold/10 to-gold/5",
+  },
+  {
+    title: "Manajemen Dislipidemia & Penyakit Kardiovaskular: Peran Obat Modern dalam Pencegahan Primer & Sekunder",
+    label: "Simposium 8",
+    tint: "from-red/8 to-red-soft/10",
+  },
+  {
+    title: "Hipertensi Terkontrol: Strategi Farmakoterapi Terkini dan Kepatuhan Pasien",
+    label: "Simposium 9",
+    tint: "from-navy/8 to-navy/4",
+  },
+  {
+    title: "Chronic Kidney Disease (CKD): Optimalisasi Terapi dan Peran Apoteker dalam Pencegahan Progresi",
+    label: "Simposium 10",
+    tint: "from-red-soft/15 to-gold/8",
   },
 ];
 
@@ -191,13 +211,13 @@ export default function Home() {
               Simposium Paralel
             </h2>
             <p className="mt-2 text-sm text-muted">6 track · Sabtu, 12 September 2026</p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
               {SIMPOSIUM.map((s, i) => (
                 <article
                   key={i}
                   className={`group glass-card glass-card-lg relative overflow-hidden bg-gradient-to-br ${s.tint} p-5 transition-all hover:-translate-y-1 hover:shadow-glass sm:p-6`}
                 >
-                  <span className="tag-caps text-gold-dark">{s.room}</span>
+                  <span className="tag-caps text-gold-dark">{s.label}</span>
                   <h3 className="mt-3 pr-6 text-sm font-medium leading-snug text-navy sm:text-base">
                     {s.title}
                   </h3>

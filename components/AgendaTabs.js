@@ -14,8 +14,26 @@ const AGENDA = [
         badge: "Registrasi",
       },
       {
+        time: "12.00–17.00",
+        title: "Job Fair",
+        description: "Pameran lowongan kerja industri farmasi.",
+        badge: "Job Fair",
+      },
+      {
+        time: "12.00–17.00",
+        title: "Ekshibisi & Pameran",
+        description: "Pameran produk dan inovasi industri farmasi.",
+        badge: "Ekshibisi",
+      },
+      {
+        time: "12.00–17.00",
+        title: "Konferensi Daerah (Konferda)",
+        description: "Konferensi Daerah IAI DIY.",
+        badge: "Konferda",
+      },
+      {
         time: "13.00–15.00",
-        title: "Presentasi Oral & Poster Sesi 1",
+        title: "Presentasi Oral Sesi 1",
         description: "8 ruang paralel untuk presentasi ilmiah.",
         badge: "Kompetisi",
       },
@@ -27,7 +45,7 @@ const AGENDA = [
       },
       {
         time: "15.30–17.00",
-        title: "Presentasi Oral & Poster Sesi 2",
+        title: "Presentasi Oral Sesi 2",
         description: "Kelanjutan presentasi ilmiah di ruang paralel.",
         badge: "Kompetisi",
       },
@@ -38,10 +56,37 @@ const AGENDA = [
     label: "Sabtu 12 Sept",
     items: [
       { time: "07.00–08.00", title: "Registrasi & Coffee Break", description: "Pendaftaran ulang dan kopi pagi.", badge: "Registrasi" },
+      {
+        time: "07.00–17.30",
+        title: "Job Fair",
+        description: "Pameran lowongan kerja industri farmasi.",
+        badge: "Job Fair",
+      },
+      {
+        time: "07.00–17.30",
+        title: "Ekshibisi & Pameran",
+        description: "Pameran produk dan inovasi industri farmasi.",
+        badge: "Ekshibisi",
+      },
       { time: "08.00–08.45", title: "Pembukaan & Pertunjukan Seni", description: "Upacara pembukaan resmi PIE YO 2026.", badge: "Ceremonial" },
-      { time: "08.45–09.15", title: "Keynote Speech — Menteri Kesehatan RI*", description: "Sambutan dan arahan kebijakan kesehatan nasional.", badge: "Keynote" },
+      {
+        time: "08.45–09.15",
+        title: "Keynote Speech — Kementerian Kesehatan RI",
+        description: "Dirjen Farmalkes",
+        descriptionEmphasis: "apt. Dr. Dra. Lucia Rizka Andalusia, M.Pharm, MARS",
+        badge: "Keynote",
+      },
       { time: "09.15–09.30", title: "Presentasi Sponsor", description: "Apresiasi dan presentasi mitra acara.", badge: "Sponsor" },
-      { time: "09.30–11.00", title: "Plenary Session 1", description: "Sesi pleno dengan pembicara utama.", badge: "Pleno" },
+      {
+        time: "09.30–11.00",
+        title: "Plenary Session",
+        description: "Transforming Health Systems Through Workforce Innovation, Equity, and Digital Readiness",
+        details: [
+          "Technical Officer (Health Policy and Strategy), Health Systems, WHO – Indonesia)",
+          { text: "Ms Deki", emphasis: true },
+        ],
+        badge: "Pleno",
+      },
       { time: "11.00–13.30", title: "ISHOMA", description: "Istirahat shalat dan makan siang.", badge: "Break" },
       { time: "13.30–15.00", title: "Simposium Paralel Materi 1", description: "6 track simposium berjalan paralel.", badge: "Simposium" },
       { time: "15.00–15.30", title: "Coffee Break", description: "Istirahat sore.", badge: "Break" },
@@ -72,6 +117,9 @@ const BADGE_COLORS = {
   Penutupan: "bg-navy/20 text-navy",
   Wellness: "bg-red-soft/30 text-red",
   Pengabdian: "bg-gold/20 text-gold-dark",
+  "Job Fair": "bg-red/10 text-red",
+  Ekshibisi: "bg-gold/15 text-gold-dark",
+  Konferda: "bg-navy/15 text-navy",
 };
 
 export default function AgendaTabs() {
@@ -110,7 +158,28 @@ export default function AgendaTabs() {
               </span>
             </div>
             <h3 className="mt-2 font-heading text-lg font-bold text-navy sm:text-xl">{item.title}</h3>
-            <p className="mt-1.5 text-sm text-muted leading-relaxed">{item.description}</p>
+            <p className="mt-1.5 text-sm text-muted leading-relaxed">
+              {item.description}
+              {item.descriptionEmphasis && (
+                <span className="block font-heading font-bold text-navy">{item.descriptionEmphasis}</span>
+              )}
+            </p>
+            {item.details?.map((line, i) => {
+              const text = typeof line === "string" ? line : line.text;
+              const emphasis = typeof line === "object" && line.emphasis;
+              return (
+                <p
+                  key={i}
+                  className={`mt-1 leading-relaxed ${
+                    emphasis
+                      ? "text-sm font-heading font-bold text-navy"
+                      : "text-sm text-muted"
+                  }`}
+                >
+                  {text}
+                </p>
+              );
+            })}
           </article>
         ))}
       </div>
