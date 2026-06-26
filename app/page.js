@@ -94,19 +94,31 @@ const SIMPOSIUM = [
 const TICKETS = [
   {
     name: "Early Bird",
-    price: "Belum tersedia",
-    active: false,
-    features: ["Semua Simposium", "Seminar Kit", "Konsumsi"],
+    price: "Rp 550.000",
+    memberPriceLabel: "Anggota IAI DIY",
+    memberPrice: "Rp 450.000",
+    active: true,
+    highlighted: true,
+    badge: "Hingga 31 Juli 2026",
+    badgeActive: true,
     featured: false,
   },
   {
     name: "Regular",
     price: "Rp 750.000",
     active: false,
-    badge: "Belum Aktif",
-    subtitle: "Buka setelah 30 Juni 2026",
+    badge: "1 Agu – 6 Sep 2026",
     featured: true,
   },
+];
+
+const TICKET_FASILITAS = [
+  "Job Fair",
+  "Ekshibisi & Pameran",
+  "Semua Simposium",
+  "Seminar Kit",
+  "Konsumsi",
+  "SKP Pembelajaran & Pengabdian",
 ];
 
 const WA_BASE = "https://wa.me/6281326681212?text=";
@@ -240,69 +252,100 @@ export default function Home() {
             <h2 className="mt-2 font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
               Tiket &amp; Pendaftaran
             </h2>
-            <p className="mt-2 text-sm text-muted">
-              Daftar melalui AI Vee via WhatsApp untuk mendapatkan link registrasi resmi.
-            </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {TICKETS.map((ticket) => (
+            <div className="mt-8">
+              <p className="font-heading text-base font-bold text-navy sm:text-lg">Fasilitas :</p>
+              <ul className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {TICKET_FASILITAS.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-muted">
+                    <span className="text-gold" aria-hidden>
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 md:items-stretch">
+              {TICKETS.map((ticket) => {
+                const isInactive = ticket.featured && !ticket.active;
+                const isHighlighted = ticket.highlighted;
+
+                return (
                 <article
                   key={ticket.name}
                   className={`flex flex-col rounded-[28px] border p-5 sm:p-6 ${
-                    ticket.featured && !ticket.active
-                      ? "border-navy/40 bg-navy text-cream-bg shadow-glass"
+                    isHighlighted
+                      ? "relative overflow-hidden border-gold/50 bg-gradient-to-br from-gold/25 via-white/55 to-cream-warm/70 shadow-[0_12px_40px_rgba(255,184,28,0.22)] ring-2 ring-gold/30 md:-translate-y-1"
+                      : isInactive
+                      ? "border-navy/40 bg-navy text-cream-bg shadow-glass opacity-60"
                       : "glass-card glass-card-lg"
                   }`}
-                  style={ticket.featured && !ticket.active ? { opacity: 0.6 } : undefined}
                 >
+                  {isHighlighted && (
+                    <span
+                      className="pointer-events-none absolute -right-8 top-5 rotate-45 bg-gold px-10 py-1 text-[10px] font-bold uppercase tracking-wider text-navy shadow-sm"
+                      aria-hidden
+                    >
+                      Promo
+                    </span>
+                  )}
                   <div className="flex items-start justify-between gap-2">
                     <h3
                       className={`font-heading text-lg font-bold ${
-                        ticket.featured && !ticket.active ? "text-cream-bg" : "text-navy"
+                        isInactive ? "text-cream-bg" : "text-navy"
                       }`}
                     >
                       {ticket.name}
                     </h3>
                     {ticket.badge && (
                       <span
-                        className={`tag-caps flex items-center gap-1 rounded-full px-2 py-1 ${
+                        className={`tag-caps flex shrink-0 items-center gap-1 rounded-full px-2 py-1 ${
                           ticket.badgeActive
-                            ? "bg-red/10 text-red"
+                            ? "bg-wa/15 text-wa ring-1 ring-wa/25"
                             : "bg-white/20 text-cream-bg/80"
-                        }`}
+                        } ${isHighlighted ? "mr-11 sm:mr-14" : ""}`}
                       >
                         {ticket.badgeActive && (
-                          <span className="h-1.5 w-1.5 rounded-full bg-red" aria-hidden />
+                          <span className="h-1.5 w-1.5 rounded-full bg-wa" aria-hidden />
                         )}
                         {ticket.badge}
                       </span>
                     )}
                   </div>
                   <p
-                    className={`mt-3 font-heading text-2xl font-bold ${
+                    className={`mt-3 font-heading font-bold ${
                       ticket.strikethrough ? "line-through opacity-70" : ""
-                    } ${ticket.featured && !ticket.active ? "text-cream-bg" : "text-navy"}`}
+                    } ${isHighlighted ? "text-3xl text-navy sm:text-4xl" : "text-2xl"} ${
+                      isInactive ? "text-cream-bg" : isHighlighted ? "" : "text-navy"
+                    }`}
                   >
                     {ticket.price}
                   </p>
-                  {ticket.subtitle && (
-                    <p className="mt-1 text-sm text-cream-bg/70">{ticket.subtitle}</p>
-                  )}
-                  {ticket.features && (
-                    <ul className="mt-4 flex-1 space-y-2">
-                      {ticket.features.map((f) => (
-                        <li key={f} className="flex gap-2 text-sm text-muted">
-                          <span className="text-gold" aria-hidden>
-                            ✓
-                          </span>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
+                  {ticket.memberPrice && (
+                    <div className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-gold/40 bg-white/75 px-4 py-3 shadow-sm backdrop-blur-sm">
+                      <p className="font-heading text-lg font-bold text-gold-dark">
+                        {ticket.memberPriceLabel}
+                      </p>
+                      <p className="shrink-0 text-right font-heading text-3xl font-bold text-gold-dark sm:text-4xl">
+                        {ticket.memberPrice}
+                      </p>
+                    </div>
                   )}
                 </article>
-              ))}
+                );
+              })}
             </div>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-6 space-y-3 text-xs text-muted sm:text-sm">
+              <p>
+                * Calon peserta dengan pembiayaan mandiri silahkan langsung booking tiket dengan akses
+                &quot;Daftar Sekarang&quot; → Isi data → Save → Upload Bukti Trf
+              </p>
+              <p>
+                * Calon peserta dengan pembiayaan sponsor / institusi, silahkan hubungi marketing / PIC
+                institusi Anda untuk mendapatkan link pendaftaran khusus
+              </p>
+            </div>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href={WA_CHAT_VEE_LINK}
                 target="_blank"
@@ -310,6 +353,14 @@ export default function Home() {
                 className="btn-wa w-full max-w-md sm:w-auto sm:min-w-[280px]"
               >
                 Chat AI Vee
+              </a>
+              <a
+                href="https://event.iaidiy.id/login?event=konferda-pie-yo-2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] w-full max-w-md items-center justify-center gap-2 rounded-full bg-navy px-6 text-sm font-semibold text-white transition-all hover:bg-navy/90 active:scale-[0.98] sm:w-auto sm:min-w-[280px]"
+              >
+                Daftar Sekarang
               </a>
             </div>
           </div>
