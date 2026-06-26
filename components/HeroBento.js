@@ -3,10 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CALENDAR_URL =
-  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=PIE+YO+2026&dates=20260911T070000Z/20260913T120000Z&location=Sahid+Raya+Hotel+Yogyakarta";
-const MAPS_URL = "https://maps.app.goo.gl/q4GHEL26cZ4kgokd8";
-
 export default function HeroBento() {
   return (
     <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-4">
@@ -52,14 +48,6 @@ export default function HeroBento() {
           </p>
           <p className="mt-1 text-sm text-muted">Jum&apos;at – Minggu</p>
         </div>
-        <a
-          href={CALENDAR_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-outline mt-4 w-full text-center"
-        >
-          Save the Date
-        </a>
       </article>
 
       <article className="glass-card glass-card-lg relative z-10 flex flex-col justify-between p-5 sm:p-6">
@@ -69,14 +57,6 @@ export default function HeroBento() {
             Sahid Raya Hotel &amp; Convention Yogyakarta
           </p>
         </div>
-        <a
-          href={MAPS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-outline mt-4 w-full text-center"
-        >
-          Lihat di Maps
-        </a>
       </article>
     </div>
   );

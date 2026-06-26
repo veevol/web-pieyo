@@ -1,16 +1,17 @@
 import Navbar from "@/components/Navbar";
-import HeroBento from "@/components/HeroBento";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import SectionReveal from "@/components/SectionReveal";
 import AgendaTabs from "@/components/AgendaTabs";
 import FabUp from "@/components/FabUp";
 import Link from "next/link";
+import Image from "next/image";
 
 const MARQUEE_ITEMS = [
   "SKP Pembelajaran & Pengabdian",
-  "6 Track Simposium",
+  "10 Track Simposium",
   "3 Hari · 11–13 September 2026",
-  "Kompetisi Oral & Poster",
+  "Call for Paper Oral Presentation",
+  "Job Fair",
   "Pameran Industri Farmasi",
   "Sahid Raya Hotel Yogyakarta",
 ];
@@ -121,6 +122,13 @@ const TICKET_FASILITAS = [
   "SKP Pembelajaran & Pengabdian",
 ];
 
+const CFP_TEMAS = [
+  "Farmasi Sosial, Manajemen, dan Pendidikan",
+  "Farmasi Klinik",
+  "Farmakologi dan Toksikologi",
+  "Farmasi Sains dan Teknologi",
+];
+
 const WA_BASE = "https://wa.me/6285163627358?text=";
 const WA_VEE_TEXT = "Halo Vee, mohon info event PIE YO 2026";
 const WA_CHAT_VEE_LINK = `${WA_BASE}${encodeURIComponent(WA_VEE_TEXT)}`;
@@ -136,7 +144,56 @@ export default function Home() {
         <section className="relative overflow-hidden px-4 pb-12 pt-6 sm:px-6 sm:pt-10 lg:pb-16">
           <FloatingOrbs />
           <div className="relative z-10 mx-auto max-w-6xl">
-            <HeroBento />
+            <div className="relative grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-4">
+              <article className="glass-card glass-card-lg relative z-10 col-span-1 flex flex-col justify-between p-5 sm:p-6 lg:col-span-2 lg:row-span-2 lg:p-8">
+                <div>
+                  <p className="tag-caps text-muted">Pertemuan Ilmiah &amp; Ekshibisi Yogyakarta</p>
+                  <h1 className="mt-3 font-heading text-h1-mobile font-bold text-navy lg:text-h1-desktop">
+                    PIE YO <span className="text-red">2026</span>
+                  </h1>
+                  <div className="mt-4 flex justify-center sm:justify-start">
+                    <Image
+                      src="/pieyo-logo.png"
+                      alt="Logo PIE YO 2026"
+                      width={320}
+                      height={220}
+                      className="logo-blend h-auto w-full max-w-[280px] object-contain sm:max-w-[320px]"
+                      priority
+                    />
+                  </div>
+                  <p className="mt-4 text-sm font-medium text-navy/80 sm:text-base">
+                    Konferda &amp; Pertemuan Ilmiah
+                  </p>
+                  <blockquote className="mt-4 border-l-2 border-gold/60 pl-3 text-sm leading-relaxed text-muted sm:text-body-desktop">
+                    &ldquo;Synergy of Pharmaceutical Science, Technology and Practices: Preparing
+                    Pharmacists for the Intelligence Future&rdquo;
+                  </blockquote>
+                </div>
+                <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap">
+                  <Link href="#daftar" className="btn-primary">
+                    Daftar Sekarang
+                  </Link>
+                  <Link href="#tentang" className="btn-outline">
+                    Tentang Acara ↓
+                  </Link>
+                </div>
+              </article>
+
+              <article className="glass-card glass-card-lg relative z-10 flex flex-col p-5 sm:p-6">
+                <p className="tag-caps text-black">Tanggal</p>
+                <p className="mt-2 font-heading text-lg font-bold leading-snug text-navy sm:text-xl">
+                  11–13 September 2026
+                </p>
+                <p className="mt-1 text-sm text-muted">Jum&apos;at – Minggu</p>
+              </article>
+
+              <article className="glass-card glass-card-lg relative z-10 flex flex-col p-5 sm:p-6">
+                <p className="tag-caps text-black">Lokasi</p>
+                <p className="mt-2 text-sm font-medium leading-snug text-navy sm:text-base">
+                  Sahid Raya Hotel &amp; Convention Yogyakarta
+                </p>
+              </article>
+            </div>
           </div>
         </section>
 
@@ -241,6 +298,36 @@ export default function Home() {
                   </span>
                 </article>
               ))}
+            </div>
+          </div>
+        </SectionReveal>
+
+        {/* Call for Paper */}
+        <SectionReveal id="call-for-paper" className="px-4 py-14 sm:px-6 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <p className="tag-caps text-gold-dark">Kompetisi Ilmiah</p>
+            <h2 className="mt-2 font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
+              Call for Paper
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted sm:text-body-desktop">
+              PIE YO 2026 membuka kesempatan bagi apoteker, akademisi, dan mahasiswa untuk
+              mempresentasikan karya ilmiah. Kompetisi yang tersedia adalah Presentasi Oral.
+              Abstrak dapat dikirimkan sesuai 4 tema berikut:
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {CFP_TEMAS.map((tema, i) => (
+                <article key={tema} className="glass-card glass-card-lg p-5 sm:p-6">
+                  <span className="tag-caps text-gold-dark">Tema {i + 1}</span>
+                  <h3 className="mt-2 font-heading text-base font-bold text-navy sm:text-lg">
+                    {tema}
+                  </h3>
+                </article>
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link href="/call-for-paper" className="btn-primary inline-flex px-6">
+                Selengkapnya →
+              </Link>
             </div>
           </div>
         </SectionReveal>

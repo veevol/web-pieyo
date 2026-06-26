@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { href: "#tentang", label: "Tentang" },
-  { href: "#agenda", label: "Agenda" },
-  { href: "#simposium", label: "Simposium" },
-  { href: "#daftar", label: "Daftar" },
+  { href: "/#tentang", label: "Tentang" },
+  { href: "/#agenda", label: "Agenda" },
+  { href: "/#simposium", label: "Simposium" },
+  { href: "/#call-for-paper", label: "Call for Paper" },
 ];
 
 export default function Navbar() {
@@ -37,8 +37,8 @@ export default function Navbar() {
           WebkitBackdropFilter: "blur(16px)",
         }}
       >
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-          <Link href="#" className="flex min-w-0 items-center gap-2.5">
+        <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
+          <Link href="/" className="flex min-w-0 items-center gap-2.5">
             <span className="logo-iai-wrap flex h-[30px] w-[30px] shrink-0 items-center justify-center overflow-hidden">
               <Image
                 src="/logo-iai.png"
@@ -57,40 +57,42 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-6 md:flex" aria-label="Navigasi utama">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-navy/80 transition-colors hover:text-navy"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="ml-auto flex items-center gap-4 sm:gap-6">
+            <nav className="hidden items-center gap-6 md:flex" aria-label="Navigasi utama">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-navy/80 transition-colors hover:text-navy"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="flex items-center gap-2">
-            <Link href="#daftar" className="btn-primary hidden px-4 py-2 text-xs sm:inline-flex sm:text-sm">
-              Daftar →
-            </Link>
-            <button
-              type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/10 bg-white/40 md:hidden"
-              aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen((o) => !o)}
-            >
-              <span className="sr-only">Menu</span>
-              {menuOpen ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M6 6l12 12M18 6L6 18" />
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <path d="M4 7h16M4 12h16M4 17h16" />
-                </svg>
-              )}
-            </button>
+            <div className="flex items-center gap-2">
+              <Link href="/#daftar" className="btn-primary hidden px-4 py-2 text-xs sm:inline-flex sm:text-sm">
+                Daftar →
+              </Link>
+              <button
+                type="button"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/10 bg-white/40 md:hidden"
+                aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((o) => !o)}
+              >
+                <span className="sr-only">Menu</span>
+                {menuOpen ? (
+                  <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <path d="M4 7h16M4 12h16M4 17h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -118,7 +120,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <Link
-                  href="#daftar"
+                  href="/#daftar"
                   className="btn-primary w-full"
                   onClick={() => setMenuOpen(false)}
                 >
