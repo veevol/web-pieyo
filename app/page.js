@@ -121,7 +121,7 @@ const TICKET_FASILITAS = [
   "SKP Pembelajaran & Pengabdian",
 ];
 
-const WA_BASE = "https://wa.me/6281326681212?text=";
+const WA_BASE = "https://wa.me/6285163627358?text=";
 const WA_VEE_TEXT = "Halo Vee, mohon info event PIE YO 2026";
 const WA_CHAT_VEE_LINK = `${WA_BASE}${encodeURIComponent(WA_VEE_TEXT)}`;
 
