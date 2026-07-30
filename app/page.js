@@ -422,16 +422,6 @@ export default function Home() {
                 );
               })}
             </div>
-            <div className="mt-6 space-y-3 text-xs text-muted sm:text-sm">
-              <p>
-                * Calon peserta dengan pembiayaan mandiri silahkan langsung booking tiket dengan akses
-                &quot;Daftar Sekarang&quot; → Isi data → Save → Upload Bukti Trf
-              </p>
-              <p>
-                * Calon peserta dengan pembiayaan sponsor / institusi, silahkan hubungi marketing / PIC
-                institusi Anda untuk mendapatkan link pendaftaran khusus
-              </p>
-            </div>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href={WA_CHAT_VEE_LINK}
@@ -449,6 +439,16 @@ export default function Home() {
               >
                 Daftar Sekarang
               </a>
+            </div>
+            <div className="mt-6 space-y-3 text-xs text-muted sm:text-sm">
+              <p>
+                * Calon peserta dengan pembiayaan mandiri silahkan langsung booking tiket dengan akses
+                &quot;Daftar Sekarang&quot; → Isi data → Save → Upload Bukti Trf
+              </p>
+              <p>
+                * Calon peserta dengan pembiayaan sponsor / institusi, silahkan hubungi marketing / PIC
+                institusi Anda untuk mendapatkan link pendaftaran khusus
+              </p>
             </div>
           </div>
         </SectionReveal>
