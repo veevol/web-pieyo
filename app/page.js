@@ -439,7 +439,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-wa w-full max-w-md sm:w-auto sm:min-w-[280px]"
               >
-                Chat AI Vee
+                Chat Vee
               </a>
               <a
                 href="https://event.iaidiy.id/login?event=konferda-pie-yo-2026"
