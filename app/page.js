@@ -100,7 +100,7 @@ const TICKETS = [
     memberPrice: "Rp 450.000",
     active: true,
     highlighted: true,
-    badge: "Hingga 31 Juli 2026",
+    badge: "Hingga 15 Agustus 2026",
     badgeActive: true,
     featured: false,
   },
@@ -108,7 +108,7 @@ const TICKETS = [
     name: "Regular",
     price: "Rp 750.000",
     active: false,
-    badge: "1 Agu – 6 Sep 2026",
+    badge: "16 Agu – 6 Sep 2026",
     featured: true,
   },
 ];
