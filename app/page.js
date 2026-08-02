@@ -492,12 +492,16 @@ export default function Home() {
             </h2>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-10">
               {CO_HOSTS.map((host) => (
-                <img
+                <div
                   key={host.name}
-                  src={host.src}
-                  alt={host.name}
-                  className="h-16 w-auto object-contain md:h-20"
-                />
+                  className="flex h-16 shrink-0 items-center justify-center md:h-20"
+                >
+                  <img
+                    src={host.src}
+                    alt={host.name}
+                    className="block h-full w-auto max-h-full object-contain"
+                  />
+                </div>
               ))}
             </div>
           </div>
