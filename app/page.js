@@ -147,8 +147,8 @@ const CFP_TEMAS = [
 
 const CO_HOSTS = [
   { name: "Universitas Gadjah Mada", src: "/images/co-host/ugm.png" },
-  { name: "Universitas Sanata Dharma", src: "/images/co-host/usd.svg" },
-  { name: "Universitas Islam Indonesia", src: "/images/co-host/uii.svg" },
+  { name: "Universitas Sanata Dharma", src: "/images/co-host/usd.png" },
+  { name: "Universitas Islam Indonesia", src: "/images/co-host/uii.png" },
   { name: "Universitas Ahmad Dahlan", src: "/images/co-host/uad.png" },
   { name: "Universitas Muhammadiyah Yogyakarta", src: "/images/co-host/umy.jpg" },
   { name: "Universitas Alma Ata", src: "/images/co-host/alma-ata.jpg" },
