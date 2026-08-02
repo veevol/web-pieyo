@@ -148,7 +148,11 @@ const CFP_TEMAS = [
 const CO_HOSTS = [
   { name: "Universitas Gadjah Mada", src: "/images/co-host/ugm.png" },
   { name: "Universitas Sanata Dharma", src: "/images/co-host/usd.png" },
-  { name: "Universitas Islam Indonesia", src: "/images/co-host/uii.png" },
+  {
+    name: "Universitas Islam Indonesia",
+    src: "/images/co-host/uii.png",
+    heightClass: "h-11 md:h-14",
+  },
   { name: "Universitas Ahmad Dahlan", src: "/images/co-host/uad.png" },
   { name: "Universitas Muhammadiyah Yogyakarta", src: "/images/co-host/umy.jpg" },
   { name: "Universitas Alma Ata", src: "/images/co-host/alma-ata.jpg" },
@@ -485,16 +489,18 @@ export default function Home() {
         </SectionReveal>
 
         {/* Didukung oleh */}
-        <SectionReveal id="didukung-oleh" className="bg-white px-4 py-12 sm:px-6 sm:py-16">
+        <SectionReveal id="didukung-oleh" className="px-4 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-center font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
+            <h2 className="font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
               Didukung oleh
             </h2>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-10">
               {CO_HOSTS.map((host) => (
                 <div
                   key={host.name}
-                  className="flex h-16 shrink-0 items-center justify-center md:h-20"
+                  className={`flex shrink-0 items-center justify-center ${
+                    host.heightClass || "h-16 md:h-20"
+                  }`}
                 >
                   <img
                     src={host.src}
