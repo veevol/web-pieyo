@@ -26,9 +26,9 @@ const KETENTUAN_ABSTRAK = [
   "Disertai 3–5 kata kunci di bagian bawah.",
   "Diketik pada bidang A4 dengan margin normal, maksimal 250 kata.",
   "File abstrak berekstensi .doc atau .docx.",
-  "Batas pengiriman abstrak: 3 Agustus 2026",
-  "Notifikasi abstrak diterima: 18 Agustus 2026",
-  "Batas pengiriman full paper: 31 Agustus 2026",
+  "Batas pengiriman abstrak: 15 Agustus 2026",
+  "Notifikasi abstrak diterima: 23 Agustus 2026",
+  "Batas pengiriman full paper: 6 September 2026",
   "Full paper dikirimkan melalui upload saat pendaftaran",
 ];
 
