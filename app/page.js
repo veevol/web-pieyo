@@ -145,6 +145,16 @@ const CFP_TEMAS = [
   "Farmasi Sains dan Teknologi",
 ];
 
+const CO_HOSTS = [
+  { name: "Universitas Gadjah Mada", src: "/images/co-host/ugm.png" },
+  { name: "Universitas Sanata Dharma", src: "/images/co-host/usd.svg" },
+  { name: "Universitas Islam Indonesia", src: "/images/co-host/uii.svg" },
+  { name: "Universitas Ahmad Dahlan", src: "/images/co-host/uad.png" },
+  { name: "Universitas Muhammadiyah Yogyakarta", src: "/images/co-host/umy.jpg" },
+  { name: "Universitas Alma Ata", src: "/images/co-host/alma-ata.jpg" },
+  { name: "Universitas Jenderal Achmad Yani Yogyakarta", src: "/images/co-host/unjaya.png" },
+];
+
 const WA_BASE = "https://wa.me/6285163627358?text=";
 const WA_VEE_TEXT = "Halo Vee, mohon info event PIE YO 2026";
 const WA_CHAT_VEE_LINK = `${WA_BASE}${encodeURIComponent(WA_VEE_TEXT)}`;
@@ -470,6 +480,25 @@ export default function Home() {
                 * Calon peserta dengan pembiayaan sponsor / institusi, silahkan hubungi marketing / PIC
                 institusi Anda untuk mendapatkan link pendaftaran khusus
               </p>
+            </div>
+          </div>
+        </SectionReveal>
+
+        {/* Didukung oleh */}
+        <SectionReveal id="didukung-oleh" className="bg-white px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-center font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
+              Didukung oleh
+            </h2>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-10">
+              {CO_HOSTS.map((host) => (
+                <img
+                  key={host.name}
+                  src={host.src}
+                  alt={host.name}
+                  className="h-16 w-auto object-contain md:h-20"
+                />
+              ))}
             </div>
           </div>
         </SectionReveal>
