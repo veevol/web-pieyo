@@ -39,58 +39,83 @@ const TUJUAN = [
   "Memperkuat jejaring profesi apoteker dalam skala nasional dan internasional",
 ];
 
+const SIMPOSIUM_TINTS = [
+  "from-gold/10 to-gold/5",
+  "from-red/8 to-red-soft/10",
+  "from-navy/8 to-navy/4",
+  "from-red-soft/15 to-gold/8",
+  "from-gold/12 to-cream-warm/30",
+  "from-navy/10 to-gold/8",
+  "from-gold/10 to-gold/5",
+  "from-red/8 to-red-soft/10",
+  "from-navy/8 to-navy/4",
+];
+
 const SIMPOSIUM = [
   {
-    title: "AI-Powered Clinical Decision Support: Meningkatkan Outcome Pasien di Era Digital",
-    label: "Simposium 1",
-    tint: "from-gold/10 to-gold/5",
+    ruangan: "Ballroom 1",
+    jam: "13.30–15.00",
+    narasumber: "dr. H. Harli Amir Mahmudji, Sp.PD – Sub. Sp EMD (K)",
+    topik: "Evidence Update in Chronic Disease Management: Optimizing Diabetes Therapy",
+    moderator: "apt. Shofia Wijayanti, M.Farm",
   },
   {
-    title: "Personalized Medicine & Farmakogenomik: Dari DNA ke Terapi Individual",
-    label: "Simposium 2",
-    tint: "from-red/8 to-red-soft/10",
+    ruangan: "Ballroom 1",
+    jam: "15.30–17.00",
+    narasumber: "apt. Tunggul Wardani, M.Farm",
+    topik: "Transformasi Praktik Kefarmasian Modern dalam Perawatan Luka: Peran Strategis Octenidine dan Allantoin",
+    moderator: "apt. Kuswardani Dwi Atmini, M.Sc",
   },
   {
-    title: "Telepharmacy & Digital Pharmacy Services: Peluang Bisnis dan Pelayanan",
-    label: "Simposium 3",
-    tint: "from-navy/8 to-navy/4",
+    ruangan: "Ballroom 2",
+    jam: "13.30–15.00",
+    narasumber: "Prof. Dr. apt. Ika Puspita Sari, S.Si., M.Si.",
+    topik: "",
+    moderator: "apt. Endah Lestari, M.Farm",
   },
   {
-    title: "Penggunaan Obat pada Kehamilan & Laktasi: Safety, Evidence, dan Praktik Klinik",
-    label: "Simposium 4",
-    tint: "from-red-soft/15 to-gold/8",
+    ruangan: "Ballroom 2",
+    jam: "15.30–17.00",
+    narasumber: "Dr. apt. Christine Patramurti",
+    topik: "Peran Apoteker di Era Pengobatan Presisi",
+    moderator: "Dr. apt. Pinasti Utami, M.Sc",
   },
   {
-    title: "Halal Pharmaceutical Industry: Dari Supply Chain ke Global Market",
-    label: "Simposium 5",
-    tint: "from-gold/12 to-cream-warm/30",
+    ruangan: "Arjuna 1",
+    jam: "13.30–15.00",
+    narasumber: "Dr. apt. Rifki Febriansyah, M.Sc.",
+    topik: "Pemanfaatan dan Penelitian Terkini Nutraceutical dalam Peningkatan Kesehatan",
+    moderator: "apt. Menit Ardhiani, M.Farm",
   },
   {
-    title: "Future Pharmacist: Leadership, Entrepreneurship & AI di Era Healthcare 5.0",
-    label: "Simposium 6",
-    tint: "from-navy/10 to-gold/8",
+    ruangan: "Arjuna 1",
+    jam: "15.30–17.00",
+    narasumber: "Dr. apt. Ani Kristiani, M.Clin.Pharm",
+    topik: "Pengembangan Bahan Alam untuk Depresi",
+    moderator: "",
   },
   {
-    title: "Update Tatalaksana Diabetes Mellitus: Dari Obat Konvensional ke Terapi Inovatif",
-    label: "Simposium 7",
-    tint: "from-gold/10 to-gold/5",
+    ruangan: "Arjuna 2",
+    jam: "13.30–15.00",
+    narasumber: "apt. Eliza Dwinta, M.Pharm., Sci",
+    topik: "Beyond Burnout: Fostering Resilience and Well-being Among Pharmacists for the Intelligence Future",
+    moderator: "apt. Yunilistianingsih, M.Farm",
   },
   {
-    title: "Manajemen Dislipidemia & Penyakit Kardiovaskular: Peran Obat Modern dalam Pencegahan Primer & Sekunder",
-    label: "Simposium 8",
-    tint: "from-red/8 to-red-soft/10",
+    ruangan: "Arjuna 2",
+    jam: "15.30–17.00",
+    narasumber: "Dr. apt. Fivy Kurniawati, S.Farm, M.Sc.",
+    topik: "From Data to Decision: Apoteker sebagai Garda Terdepan Keamanan Obat di Era Digital",
+    moderator: "apt. Michael Raharja Gani, M.Farm",
   },
   {
-    title: "Hipertensi Terkontrol: Strategi Farmakoterapi Terkini dan Kepatuhan Pasien",
-    label: "Simposium 9",
-    tint: "from-navy/8 to-navy/4",
+    ruangan: "Puntadewa",
+    jam: "13.30–15.00",
+    narasumber: "Prof. apt. Suci Hanifah, Ph.D",
+    topik: "Management of Incompatibility Medication in ICU",
+    moderator: "",
   },
-  {
-    title: "Chronic Kidney Disease (CKD): Optimalisasi Terapi dan Peran Apoteker dalam Pencegahan Progresi",
-    label: "Simposium 10",
-    tint: "from-red-soft/15 to-gold/8",
-  },
-];
+].map((item, i) => ({ ...item, tint: SIMPOSIUM_TINTS[i % SIMPOSIUM_TINTS.length] }));
 
 const TICKETS = [
   {
@@ -279,23 +304,33 @@ export default function Home() {
             <h2 className="mt-2 font-heading text-h2-mobile font-bold text-navy lg:text-h2-desktop">
               Simposium Paralel
             </h2>
-            <p className="mt-2 text-sm text-muted">6 track · Sabtu, 12 September 2026</p>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-5 gap-4">
-              {SIMPOSIUM.map((s, i) => (
+            <p className="mt-2 text-sm text-muted">9 sesi · Sabtu, 12 September 2026</p>
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {SIMPOSIUM.map((s) => (
                 <article
-                  key={i}
-                  className={`group glass-card glass-card-lg relative overflow-hidden bg-gradient-to-br ${s.tint} p-5 transition-all hover:-translate-y-1 hover:shadow-glass sm:p-6`}
+                  key={`${s.ruangan}-${s.jam}-${s.narasumber}`}
+                  className={`glass-card glass-card-lg overflow-hidden bg-gradient-to-br ${s.tint} p-5 transition-all hover:-translate-y-1 hover:shadow-glass sm:p-6`}
                 >
-                  <span className="tag-caps text-gold-dark">{s.label}</span>
-                  <h3 className="mt-3 pr-6 text-sm font-medium leading-snug text-navy sm:text-base">
-                    {s.title}
-                  </h3>
-                  <span
-                    className="absolute bottom-4 right-4 text-xl text-navy/30 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gold"
-                    aria-hidden
-                  >
-                    ↗
-                  </span>
+                  <p className="tag-caps text-gold-dark">
+                    {s.ruangan} · {s.jam}
+                  </p>
+                  {s.topik ? (
+                    <h3 className="mt-3 font-heading text-base font-bold leading-snug text-navy sm:text-lg">
+                      {s.topik}
+                    </h3>
+                  ) : (
+                    <h3 className="mt-3 font-heading text-base font-bold italic leading-snug text-muted sm:text-lg">
+                      Topik akan diumumkan
+                    </h3>
+                  )}
+                  <p className="mt-3 text-sm font-semibold leading-snug text-gold-dark sm:text-[0.95rem]">
+                    {s.narasumber}
+                  </p>
+                  {s.moderator ? (
+                    <p className="mt-2 text-xs leading-snug text-muted sm:text-sm">
+                      Moderator: {s.moderator}
+                    </p>
+                  ) : null}
                 </article>
               ))}
             </div>
