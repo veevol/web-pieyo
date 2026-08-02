@@ -71,7 +71,7 @@ const SIMPOSIUM = [
     jam: "13.30–15.00",
     narasumber: "Prof. Dr. apt. Ika Puspita Sari, S.Si., M.Si.",
     topik: "One Health dalam Pengendalian Resistensi Antimikroba: Peran Strategis Apoteker",
-    moderator: "apt. Endah Lestari, M.Farm",
+    moderator: "",
   },
   {
     ruangan: "Ballroom 2",
