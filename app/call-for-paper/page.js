@@ -26,10 +26,10 @@ const KETENTUAN_ABSTRAK = [
   "Disertai 3–5 kata kunci di bagian bawah.",
   "Diketik pada bidang A4 dengan margin normal, maksimal 250 kata.",
   "File abstrak berekstensi .doc atau .docx.",
-  "Batas pengiriman abstrak: 3 Agustus 2026",
-  "Notifikasi abstrak diterima: 18 Agustus 2026",
-  "Batas pengiriman full paper: 31 Agustus 2026",
-  "Full paper dikirimkan melalui upload saat pendaftaran",
+  "Batas pengiriman abstrak: 15 Agustus 2026",
+  "Notifikasi abstrak diterima: 23 Agustus 2026",
+  "Batas pengiriman full paper: 6 September 2026",
+  "Full paper dikirimkan melalui email ke pieyo2022@gmail.com",
 ];
 
 const PETUNJUK_ORAL = [
@@ -144,6 +144,10 @@ export default function CallForPaperPage() {
                     </a>
                     .
                   </span>
+                </li>
+                <li className="flex gap-3 text-sm leading-relaxed text-muted sm:text-body-desktop">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden />
+                  Abstrak dikirimkan melalui email ke pieyo2022@gmail.com
                 </li>
                 {KETENTUAN_ABSTRAK.slice(5).map((item) => (
                   <li
