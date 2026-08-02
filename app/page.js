@@ -57,63 +57,54 @@ const SIMPOSIUM = [
     jam: "13.30–15.00",
     narasumber: "dr. H. Harli Amir Mahmudji, Sp.PD – Sub. Sp EMD (K)",
     topik: "Evidence Update in Chronic Disease Management: Optimizing Diabetes Therapy",
-    moderator: "apt. Shofia Wijayanti, M.Farm",
   },
   {
     ruangan: "Ballroom 1",
     jam: "15.30–17.00",
     narasumber: "apt. Tunggul Wardani, M.Farm",
     topik: "Transformasi Praktik Kefarmasian Modern dalam Perawatan Luka: Peran Strategis Octenidine dan Allantoin",
-    moderator: "apt. Kuswardani Dwi Atmini, M.Sc",
   },
   {
     ruangan: "Ballroom 2",
     jam: "13.30–15.00",
     narasumber: "Prof. Dr. apt. Ika Puspita Sari, S.Si., M.Si.",
     topik: "One Health dalam Pengendalian Resistensi Antimikroba: Peran Strategis Apoteker",
-    moderator: "",
   },
   {
     ruangan: "Ballroom 2",
     jam: "15.30–17.00",
     narasumber: "Dr. apt. Christine Patramurti",
     topik: "Peran Apoteker di Era Pengobatan Presisi",
-    moderator: "Dr. apt. Pinasti Utami, M.Sc",
   },
   {
     ruangan: "Arjuna 1",
     jam: "13.30–15.00",
     narasumber: "Dr. apt. Rifki Febriansyah, M.Sc.",
     topik: "Pemanfaatan dan Penelitian Terkini Nutraceutical dalam Peningkatan Kesehatan",
-    moderator: "apt. Menit Ardhiani, M.Farm",
   },
   {
     ruangan: "Arjuna 1",
     jam: "15.30–17.00",
     narasumber: "Dr. apt. Ani Kristiani, M.Clin.Pharm",
     topik: "Pengembangan Bahan Alam untuk Depresi",
-    moderator: "",
   },
   {
     ruangan: "Arjuna 2",
     jam: "13.30–15.00",
     narasumber: "apt. Eliza Dwinta, M.Pharm., Sci",
     topik: "Beyond Burnout: Fostering Resilience and Well-being Among Pharmacists for the Intelligence Future",
-    moderator: "apt. Yunilistianingsih, M.Farm",
   },
   {
     ruangan: "Arjuna 2",
     jam: "15.30–17.00",
     narasumber: "Dr. apt. Fivy Kurniawati, S.Farm, M.Sc.",
     topik: "From Data to Decision: Apoteker sebagai Garda Terdepan Keamanan Obat di Era Digital",
-    moderator: "apt. Michael Raharja Gani, M.Farm",
   },
   {
     ruangan: "Puntadewa",
     jam: "13.30–15.00",
     narasumber: "Prof. apt. Suci Hanifah, Ph.D",
     topik: "Management of Incompatibility Medication in ICU",
-    moderator: "",
   },
 ].map((item, i) => ({ ...item, tint: SIMPOSIUM_TINTS[i % SIMPOSIUM_TINTS.length] }));
 
@@ -326,11 +317,6 @@ export default function Home() {
                   <p className="mt-3 text-sm font-semibold leading-snug text-gold-dark sm:text-[0.95rem]">
                     {s.narasumber}
                   </p>
-                  {s.moderator ? (
-                    <p className="mt-2 text-xs leading-snug text-muted sm:text-sm">
-                      Moderator: {s.moderator}
-                    </p>
-                  ) : null}
                 </article>
               ))}
             </div>
