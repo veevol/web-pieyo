@@ -155,8 +155,12 @@ const CO_HOSTS = [
   },
   { name: "Universitas Ahmad Dahlan", src: "/images/co-host/uad.png" },
   { name: "Universitas Muhammadiyah Yogyakarta", src: "/images/co-host/umy.jpg" },
-  { name: "Universitas Alma Ata", src: "/images/co-host/alma-ata.jpg" },
+  { name: "Universitas Alma Ata", src: "/images/co-host/logo alma ata rev.jpeg" },
   { name: "Universitas Jenderal Achmad Yani Yogyakarta", src: "/images/co-host/unjaya.png" },
+  {
+    name: "Universitas Kristen Immanuel Yogyakarta",
+    src: "/images/co-host/Universitas Kristen Immanuel Yogyakarta.png",
+  },
 ];
 
 const WA_BASE = "https://wa.me/6285163627358?text=";
