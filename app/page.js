@@ -154,8 +154,16 @@ const CO_HOSTS = [
     heightClass: "h-11 md:h-14",
   },
   { name: "Universitas Ahmad Dahlan", src: "/images/co-host/uad.png" },
-  { name: "Universitas Muhammadiyah Yogyakarta", src: "/images/co-host/umy.jpg" },
-  { name: "Universitas Alma Ata", src: "/images/co-host/logo alma ata rev.jpeg" },
+  {
+    name: "Universitas Muhammadiyah Yogyakarta",
+    src: "/images/co-host/umy.png",
+    heightClass: "h-20 md:h-24",
+  },
+  {
+    name: "Universitas Alma Ata",
+    src: "/images/co-host/logo alma ata rev.png",
+    heightClass: "h-20 md:h-24",
+  },
   { name: "Universitas Jenderal Achmad Yani Yogyakarta", src: "/images/co-host/unjaya.png" },
   {
     name: "Universitas Kristen Immanuel Yogyakarta",
