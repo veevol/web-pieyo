@@ -110,22 +110,14 @@ const SIMPOSIUM = [
 
 const TICKETS = [
   {
-    name: "Early Bird",
-    price: "Rp 550.000",
-    memberPriceLabel: "Anggota IAI DIY",
-    memberPrice: "Rp 450.000",
-    active: true,
-    highlighted: true,
-    badge: "Hingga 15 Agustus 2026",
-    badgeActive: true,
-    featured: false,
-  },
-  {
     name: "Regular",
     price: "Rp 750.000",
-    active: false,
-    badge: "16 Agu – 6 Sep 2026",
-    featured: true,
+    memberPriceLabel: "Anggota IAI DIY",
+    memberPrice: "Rp 650.000",
+    active: true,
+    highlighted: true,
+    badge: "KUOTA TERBATAS · Hingga 6 Sep 2026",
+    badgeActive: true,
   },
 ];
 
@@ -399,7 +391,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 md:items-stretch">
+            <div className="mt-8 grid gap-4 sm:mx-auto sm:max-w-md">
               {TICKETS.map((ticket) => {
                 const isInactive = ticket.featured && !ticket.active;
                 const isHighlighted = ticket.highlighted;
@@ -409,21 +401,13 @@ export default function Home() {
                   key={ticket.name}
                   className={`flex flex-col rounded-[28px] border p-5 sm:p-6 ${
                     isHighlighted
-                      ? "relative overflow-hidden border-gold/50 bg-gradient-to-br from-gold/25 via-white/55 to-cream-warm/70 shadow-[0_12px_40px_rgba(255,184,28,0.22)] ring-2 ring-gold/30 md:-translate-y-1"
+                      ? "relative overflow-hidden border-gold/50 bg-gradient-to-br from-gold/25 via-white/55 to-cream-warm/70 shadow-[0_12px_40px_rgba(255,184,28,0.22)] ring-2 ring-gold/30"
                       : isInactive
                       ? "border-navy/40 bg-navy text-cream-bg shadow-glass opacity-60"
                       : "glass-card glass-card-lg"
                   }`}
                 >
-                  {isHighlighted && (
-                    <span
-                      className="pointer-events-none absolute -right-8 top-5 rotate-45 bg-gold px-10 py-1 text-[10px] font-bold uppercase tracking-wider text-navy shadow-sm"
-                      aria-hidden
-                    >
-                      Promo
-                    </span>
-                  )}
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
                     <h3
                       className={`font-heading text-lg font-bold ${
                         isInactive ? "text-cream-bg" : "text-navy"
@@ -437,7 +421,7 @@ export default function Home() {
                           ticket.badgeActive
                             ? "bg-wa/15 text-wa ring-1 ring-wa/25"
                             : "bg-white/20 text-cream-bg/80"
-                        } ${isHighlighted ? "mr-11 sm:mr-14" : ""}`}
+                        }`}
                       >
                         {ticket.badgeActive && (
                           <span className="h-1.5 w-1.5 rounded-full bg-wa" aria-hidden />
