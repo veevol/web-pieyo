@@ -110,13 +110,13 @@ const SIMPOSIUM = [
 
 const TICKETS = [
   {
-    name: "Regular",
+    name: "Kuota Terbatas",
     price: "Rp 750.000",
     memberPriceLabel: "Anggota IAI DIY",
     memberPrice: "Rp 650.000",
     active: true,
     highlighted: true,
-    badge: "KUOTA TERBATAS · Hingga 6 Sep 2026",
+    badge: "Hingga 6 Sep 2026",
     badgeActive: true,
   },
 ];
